@@ -1,0 +1,6 @@
+This document contains all the changes to DB schema, Queries, structure, and architecture from the past project phases. 
+
+- Added an auto_increment parameter to the attribute "accountNo INT" in UserAccount table.
+- Changed primary of UserAccount table from (mobileNo, accountNo) to (accountNo).
+- Changed foreign key constraint of UpdateForm table from "FOREIGN KEY(mobileNo, accountNo) REFERENCES UserAccount(mobileNo, accountNo)" to "FOREIGN KEY(accountNo) REFERENCES UserAccount(accountNo)"
+- Added "ON DELETE CASCADE" for foreign key constraints in relations: CallnTextPacksPerOrderNo, LifestylePacksPerOrderNo, SurfPacksPerOrderNo

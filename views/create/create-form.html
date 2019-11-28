@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <title>Create</title>
+</head>
+
+<body class="container">
+    <nav class=" navbar sticky-top navbar-expand-sm navbar-dark" style="background-color: #3650a3;">
+        <a class="navbar-brand" href="/">
+            <img src="/logo.png" width="30" height="30" class="d-inline-block align-top">
+            Globe
+        </a>
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="/">Home</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="/create">Create</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/read">Read</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/update">Update</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/delete">Delete</a>
+            </li>
+        </ul>
+    </nav>
+    <h1 class="display-3 text-center"> Globe Postpaid Renewal Service</h1>
+    <div class="container">
+        <br>
+        <h1 class="text-center">Create A New Form
+        </h1>
+        <form method="POST" action="/submit-create-form" class="needs-validation" novalidate>
+            <div class="container">
+                <h3>Personal Information</h3>
+                <div class="form-row">
+                    <div class="col-md-2"></div>
+                    <div class="form-group col-md-4">
+                        <label for="accountno">Account No.:</label>
+                        <input type="text" class="form-control" id="accountno" placeholder="100001" name="accountno"
+                            required>
+                        <div class="invalid-feedback">Please provide your account number.</div>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <div class="text-center">
+                            <label>Forgot your Account Number?</label> <br>
+                            <button type="button" class="btn btn-secondary" id="forgotAccountBtn">Click
+                                Here</button>
+                        </div>
+                    </div>
+                    <div class="col-md-2"></div>
+                </div>
+            </div>
+            <div class="container">
+                <h3>Plan Summary</h3>
+                <div class="form-group">
+                    <label for="plan">Plan:</label>
+                    <select class="form-control" id="plan" name="plan" required>
+                        <option disabled selected value="">--Select your plan--</option>
+                        <option>ThePlan 199</option>
+                        <option>ThePlan 499</option>
+                        <option>ThePlan 799</option>
+                        <option>ThePlan 999</option>
+                        <option>ThePlan 1299</option>
+                    </select>
+                    <div class="invalid-feedback">Please select a plan.</div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-4">
+                        <label>Surf Packs (Php 50 each):</label><br>
+                        <div class="checkbox">
+                            <label><input class="surfPack" name="surfPacks[]" type="checkbox" value="2GB">2GB</label>
+                            <br>
+                            <label><input class="surfPack" name="surfPacks[]" type="checkbox" value="5GB">5GB</label>
+                            <br>
+                            <label><input class="surfPack" name="surfPacks[]" type="checkbox" value="10GB">10GB</label>
+                            <br>
+                            <label><input class="surfPack" name="surfPacks[]" type="checkbox" value="15GB">15GB</label>
+                            <br>
+                            <label><input class="surfPack" name="surfPacks[]" type="checkbox" value="30GB">30GB</label>
+                            <br>
+                        </div>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label>Lifestyle Packs (Php 100 each):</label><br>
+                        <div class="checkbox">
+                            <label><input class="lifestylePack" name="lifestylePacks[]" type="checkbox"
+                                    value="1GB Facebook">1GB
+                                Facebook</label> <br>
+                            <label><input class="lifestylePack" name="lifestylePacks[]" type="checkbox"
+                                    value="Unlimited Viber">Unlimited
+                                Viber</label><br>
+                            <label><input class="lifestylePack" name="lifestylePacks[]" type="checkbox"
+                                    value="500MB Youtube">500MB
+                                Youtube</label><br>
+                            <label><input class="lifestylePack" name="lifestylePacks[]" type="checkbox"
+                                    value="Unlimited ML">Unlimited
+                                ML</label><br>
+                            <label><input class="lifestylePack" name="lifestylePacks[]" type="checkbox"
+                                    value="1GB Instagram">1GB
+                                Instagram</label><br>
+                        </div>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label>Call & Text Packs (Php 150 each):</label><br>
+                        <div class="checkbox">
+                            <label><input class="callNTextPack" name="callNTextPacks[]" type="checkbox"
+                                    value="Unli Call To Landline">Unli
+                                Call To
+                                Landline</label><br>
+                            <label><input class="callNTextPack" name="callNTextPacks[]" type="checkbox"
+                                    value="Unli Call To Globe Subscribers">Unli Call To Globe
+                                Subscribers</label><br>
+                            <label><input class="callNTextPack" name="callNTextPacks[]" type="checkbox"
+                                    value="Unli Text To Globe Subscribers">Unli Text To Globe
+                                Subscribers</label><br>
+                            <label><input class="callNTextPack" name="callNTextPacks[]" type="checkbox"
+                                    value="300 Texts To Other Networks">300 Texts To Other
+                                Networks</label><br>
+                            <label><input class="callNTextPack" name="callNTextPacks[]" type="checkbox"
+                                    value="1 Hour Call To Other Networks">1 Hour Call To Other
+                                Networks</label><br>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label><strong>Monthly Service Fee:</strong> Php <span id="msf">0</span></label><br />
+                    <label><strong>Lock Up Period:</strong> <span id="lockup">0</span> months</label> <br />
+                    <input name="monthlyservicefee" type="text" id="hidden_msf" hidden>
+                </div>
+                <div class="form-group">
+                    <label for="planremarks">Remarks:</label>
+                    <textarea class="form-control" id="planremarks" rows="3" name="planremarks"></textarea>
+                </div>
+            </div>
+            <div class="container">
+                <h3>Device Information</h3>
+                <div class="form-group">
+                    <label for="device-model">Device Model:</label>
+                    <select class="form-control" id="device-model" name="devicemodel" required>
+                        <option disabled selected value="">--Select your device model--</option>
+                        <option>Apple iPhone11 - 128GB</option>
+                        <option>Apple iPhone11 - 256GB</option>
+                        <option>Apple iPhone11 - 512GB</option>
+                        <option>Apple iPhone11 Pro - 128GB</option>
+                        <option>Apple iPhone11 Pro - 256GB</option>
+                        <option>Apple iPhone11 Pro - 512GB</option>
+                        <option>Apple iPhone11 Pro Max - 128GB</option>
+                        <option>Apple iPhone11 Pro Max - 256GB</option>
+                        <option>Apple iPhone11 Pro Max - 512GB</option>
+                        <option>Google Pixel 4 - 128GB</option>
+                        <option>Google Pixel 4 - 256GB</option>
+                        <option>Google Pixel 4 - 512GB</option>
+                        <option>Samsung Galaxy Note 10 - 128GB</option>
+                        <option>Samsung Galaxy Note 10 - 256GB</option>
+                        <option>Samsung Galaxy Note 10 - 512GB</option>
+                    </select>
+                    <div class="invalid-feedback">Please select a device.</div>
+                </div>
+                <div class=form-row>
+                    <div class="form-group col-md-6">
+                        <label for="imei">IMEI No.:</label>
+                        <input type="text" class="form-control" id="imei" disabled>
+                        <input name="imei" type="text" id="hidden_imei" hidden>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="device-release-date">Device Release Date:</label>
+                        <input type="date" class="form-control" id="device-release-date" disabled>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="baseprice">Handset Base Price:</label>
+                        <input type="text" class="form-control" id="baseprice" disabled>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="cashout">Handset Cash Out:</label>
+                        <input type="text" class="form-control" id="cashout" disabled>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="modeofpayment">Mode Of Payment:</label>
+                    <select class='form-control' id='modeofpayment' name="modeofpayment" required>
+                        <option disabled selected value="">Select your mode of payment</option>
+                        <option>Cash</option>
+                        <option>GCash</option>
+                        <option>CTB</option>
+                        <option>Card</option>
+                    </select>
+                    <div class="invalid-feedback">Please provide your mode of payment.</div>
+                </div>
+                <div class="form-group">
+                    <label for="deviceremarks">Remarks:</label>
+                    <textarea class="form-control" id="deviceremarks" rows="3" name="deviceremarks"></textarea>
+                </div>
+            </div>
+            <br />
+            <div class="text-center">
+                <button type="submit" class="btn btn-success">Submit</button>
+                <button type="reset" class="btn btn-danger">Reset</button>
+                <a href="/create" class="btn btn-primary">Cancel</a><br> <br> <br>
+            </div>
+        </form>
+        <script src="../scripts/form_scripts.js"></script>
+
+    </div>
+
+
+</body>
+
+</html>

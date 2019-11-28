@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <title>Forgot Account</title>
+</head>
+
+<body class="container">
+    <nav class=" navbar sticky-top navbar-expand-sm navbar-dark" style="background-color: #3650a3;">
+        <a class="navbar-brand" href="/">
+            <img src="/logo.png" width="30" height="30" class="d-inline-block align-top">
+            Globe
+        </a>
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/create">Create</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="/read">Read</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/update">Update</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/delete">Delete</a>
+            </li>
+        </ul>
+    </nav>
+    <h1 class="display-3 text-center"> Globe Postpaid Renewal Service</h1><br>
+    <div class="container">
+        <h3 class="text-center">Forgot your Account Number</h3> <br>
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-4">
+                <label for="mobileno">Mobile No.:</label>
+                <input type="text" class="form-control" id="mobile" placeholder="09170000001" name="mobileno">
+            </div>
+            <div class="col-md-4">
+                <div class="text-center">
+                    <label>Retrieve your Account Number</label> <br>
+                    <button type="button" class="btn btn-primary" id="checkAccount">Click Here</button>
+                    <script src="../scripts/forgot_account.js"></script>
+                </div>
+            </div>
+            <div class="col-md-2"></div>
+        </div>
+        <br>
+
+        <div class="alert alert-secondary" role="alert" id="accountno" hidden></div>
+        <div class='text-center'>
+            <br><button id="backBtn" class="btn btn-secondary">Back</button>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <title>Update</title>
+</head>
+
+<body class="container">
+    <nav class=" navbar sticky-top navbar-expand-sm navbar-dark" style="background-color: #3650a3;">
+        <a class="navbar-brand" href="/">
+            <img src="/logo.png" width="30" height="30" class="d-inline-block align-top">
+            Globe
+        </a>
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/create">Create</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/read">Read</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="/update">Update</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/delete">Delete</a>
+            </li>
+        </ul>
+    </nav>
+    <h1 class="display-3 text-center"> Globe Postpaid Renewal Service</h1><br>
+    <div class="container">
+        <h3 class="text-center">Change your Device</h3> <br>
+        <form method="POST" action="/submit-change-device" class="needs-validation" novalidate>
+            <div class="form-row">
+                <div class="col-md-2"></div>
+                <div class="form-group col-md-4">
+                    <label for="mobileno">Order No.:</label>
+                    <input type="text" class="form-control" id="orderno" placeholder="001002" name="orderno" required>
+                    <div class="invalid-feedback">Please input your order number.</div>
+                </div>
+                <div class="form-group col-md-4">
+                    <div class="text-center">
+                        <label>Confirm Order No.</label> <br>
+                        <button type="button" class="btn btn-success" id="confirmOrderNum">Click Here</button>
+                    </div>
+
+                </div>
+                <div class="form-group col-md-2">
+                </div>
+            </div>
+            <div class="alert alert-danger" role="alert" id="notfound" hidden></div>
+            <div id="order-details" hidden>
+                <h3>Old Details</h3>
+                <div class="form-group">
+                    <label>Current Device</label>
+                    <input type="text" id="oldDevice" class="form-control" placeholder="---" disabled>
+                </div>
+                <div class=form-row>
+                    <div class="form-group col-md-6">
+                        <label for="imei">IMEI No.:</label>
+                        <input type="text" class="form-control" id="imei" disabled>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="device-release-date">Device Release Date:</label>
+                        <input type="date" class="form-control" id="device-release-date" disabled>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-4">
+                        <label for="plan">Plan:</label>
+                        <input type="text" class="form-control" id="plan" disabled>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="baseprice">Handset Base Price:</label>
+                        <input type="text" class="form-control" id="baseprice" disabled>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="cashout">Handset Cash Out:</label>
+                        <input type="text" class="form-control" id="cashout" disabled>
+                    </div>
+                </div>
+                <br>
+                <h3>New Details</h3>
+                <div class="form-group">
+                    <label>NEW Device</label>
+                    <select class="form-control" id="device-model" required>
+                        <option disabled selected value="">--Select your device model--</option>
+                        <option>Apple iPhone11 - 128GB</option>
+                        <option>Apple iPhone11 - 256GB</option>
+                        <option>Apple iPhone11 - 512GB</option>
+                        <option>Apple iPhone11 Pro - 128GB</option>
+                        <option>Apple iPhone11 Pro - 256GB</option>
+                        <option>Apple iPhone11 Pro - 512GB</option>
+                        <option>Apple iPhone11 Pro Max - 128GB</option>
+                        <option>Apple iPhone11 Pro Max - 256GB</option>
+                        <option>Apple iPhone11 Pro Max - 512GB</option>
+                        <option>Google Pixel 4 - 128GB</option>
+                        <option>Google Pixel 4 - 256GB</option>
+                        <option>Google Pixel 4 - 512GB</option>
+                        <option>Samsung Galaxy Note 10 - 128GB</option>
+                        <option>Samsung Galaxy Note 10 - 256GB</option>
+                        <option>Samsung Galaxy Note 10 - 512GB</option>
+                    </select>
+                    <div class="invalid-feedback">Please select a device.</div>
+                </div>
+                <div class=form-row>
+                    <div class="form-group col-md-6">
+                        <label for="new_imei">NEW IMEI No.:</label>
+                        <input type="text" class="form-control" id="new_imei" disabled>
+                        <input name="new_imei" type="text" id="new_hidden_imei" hidden>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="new_device-release-date">NEW Device Release Date:</label>
+                        <input type="date" class="form-control" id="new_device-release-date" disabled>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="new_baseprice">NEW Handset Base Price:</label>
+                        <input type="text" class="form-control" id="new_baseprice" disabled>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="new_cashout">NEW Handset Cash Out:</label>
+                        <input type="text" class="form-control" id="new_cashout" disabled>
+                    </div>
+                </div>
+            </div>
+
+            <br>
+            <div class='text-center'>
+                <button type="submit" class="btn btn-success" id="submitBtn" hidden>Submit</button>
+                <button type="reset" class="btn btn-danger" id="resetBtn" hidden>Reset</button>
+                <button type="button" id="cancelBtn" class="btn btn-primary">Cancel</button> <br><br><br>
+            </div>
+        </form>
+    </div>
+
+
+
+
+    </div>
+    <script src="../scripts/change_device.js"></script>
+</body>
+
+</html>

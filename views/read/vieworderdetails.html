@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <title>View Order Details</title>
+</head>
+
+<body class="container">
+    <nav class=" navbar sticky-top navbar-expand-sm navbar-dark" style="background-color: #3650a3;">
+        <a class="navbar-brand" href="/">
+            <img src="/logo.png" width="30" height="30" class="d-inline-block align-top">
+            Globe
+        </a>
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/create">Create</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="/read">Read</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/update">Update</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/delete">Delete</a>
+            </li>
+        </ul>
+    </nav>
+    <h1 class="display-3 text-center"> Globe Postpaid Renewal Service</h1><br>
+    <div class="container">
+        <h3 class="text-center">View your Postpaid Renewal Order</h3> <br>
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-4">
+                <label for="ordernum">Order No.:</label>
+                <input type="text" class="form-control" id="ordernum" placeholder="00001">
+            </div>
+            <div class="col-md-4">
+                <div class="text-center">
+                    <label>Retrieve your Order Details</label> <br>
+                    <button type="button" class="btn btn-primary" id="getDetails">Click Here</button>
+                    <script src="../scripts/view_order.js"></script>
+                </div>
+            </div>
+            <div class="col-md-2"></div>
+        </div> <br>
+        <div class="alert alert-danger" role="alert" id="notfound" hidden></div>
+        <table id="plan_table" class="table table-hover" hidden>
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">Order #</th>
+                    <th scope="col">Account #</th>
+                    <th scope="col">Plan</th>
+                    <th scope="col">Surf Packs</th>
+                    <th scope="col">Lifestyle Packs</th>
+                    <th scope="col">Call & Text Packs</th>
+                    <th scope="col">Monthly Service Fee</th>
+                </tr>
+            </thead>
+            <tbody id="tablebody">
+            </tbody>
+        </table>
+        <div class='text-center'>
+            <br><a href="/read" class="btn btn-secondary">Back</a>
+        </div>
+    </div>
+</body>
+
+</html>

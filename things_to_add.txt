@@ -1,0 +1,1 @@
+- show orders to be deleted in the confirmation modal
